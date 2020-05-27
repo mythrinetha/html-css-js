@@ -9,7 +9,7 @@ ACTB Limited offers prepaid and postpaid connections for their customers. They h
  
  SNO      LABEL NAME                  COMPONENT NAME                       DESCRIPTION
 
-1         Customer Name               custname                            To enter the name of the customer. The text “Enter the customer name” should be displayed by default in the text box. While entering the name, this text should disappear
+1         Customer Name               custname                            To enter the name of the customer. The text “Enter the                                                                                   customer name” should be displayed by default in the text box.                                                                           While entering the name, this text should disappear
 
 2         Customer Email	            email	                              To enter the email-id of the customer. The text “abc@gmail.com" should be displayed by default in the text box. While entering the e-mail, this text should disappear. This field should accept a valid email.
 
