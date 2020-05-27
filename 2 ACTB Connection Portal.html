@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body
+            {
+                background-color:#EED426;
+            }
+            h1
+            {
+                color: #006666;
+                font-family: verdana;
+                text-align: center;
+            }
+            table
+            {
+                
+                border: solid black 1px;
+                text-align: right;
+            }
+        </style>
+        <script type="text/javascript">
+        function fun()
+        {
+            var du=document.getElementById("duration").value;
+            var cost;
+            var mr;
+            var r=document.getElementsByName("scheme");
+            var t=document.getElementById("connectiontype");
+            if(t.options[t.selectedIndex].value=="Pre")
+                mr=75;
+            else
+                mr=150;
+            if(r[0].checked)
+                cost=200;
+            else if(r[1].checked)
+                cost=350;
+            else
+                cost=500;
+            var res=(du*cost)+mr;
+            document.getElementById("result").innerHTML="The Total Monthly Rental Cost is Rs. "+res;   
+        }
+        </script>
+
+    </head>
+    <body>
+        <h1>ACTB Connection Portal</h1>
+        <br><br>
+        <form onsubmit="fun(); return false" method="GET">
+            Customer Name
+            <input type="text" placeholder="Enter the customer name" name="custname">
+            <br>
+            Customer Email
+            <input type="email" placeholder="abc@gmail.com" name="email">
+            <br>
+            Telephone/Mobile Number
+            <input type="text" maxlength="10" name="mobile"  pattern="[789][0-9]{9}" placeholder="Enter the Mobile Number">
+            <br>
+            Connection Type
+            <select name="conntype" id="connectiontype">
+                <option id="Pre" value="Pre">Pre</option>
+                <option id="Post" value="Post">Post</option>
+            </select>
+            <br>
+            Scheme name
+            <input type="radio" name="scheme" id="scheme1" value="Local">Local
+            <input type="radio" name="scheme" id="scheme2" value="STD">STD
+            <input type="radio" name="scheme" id="scheme3" value="FullTalkTime">FullTalkTime
+            <br>
+            Connection Duration
+            <input type="number" min="1" max="12" value="1" name="duration" id="duration">
+            <br>
+            Connection Bill Amount
+            <input type="submit" name="submit" value="Calculate Bill Amount">
+            <input type="reset" name="clear">
+        </form>
+        <br>
+        <div id="result"></div>
+        <center>Rental Cost Table</center>
+        <table align="center" id="rentalcost" border=1 >
+            
+            <tr>
+                <th>Connection Type</th>
+                <th>Call Limit</th>
+                <th>Monthly Rental</th>
+            </tr>
+            <tr>
+                <td>Pre</td>
+                <td>500</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>Post</td>
+                <td>Unlimited</td>
+                <td>150</td>
+            </tr>
+        </table>
+
+    </body>
+</html>
+
